@@ -1,0 +1,7 @@
+---
+- name: Git clone remote static page repo
+  git:
+    repo={{ repo_url }}
+    dest={{ dest_dir }}
+    update=no
+    force=no
