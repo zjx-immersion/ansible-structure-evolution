@@ -1,0 +1,5 @@
+[webserver]
+192.168.33.10 ansible_user=vagrant
+
+[static_page]
+192.168.33.10 ansible_user=vagrant 

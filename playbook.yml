@@ -1,0 +1,21 @@
+---
+
+- hosts: webserver
+  remote_user: root
+  become_method: sudo
+  tasks:
+    - name: Run the equivalent of "apt-get update" as a separate step
+      sudo: yes
+      apt:
+        update_cache: yes
+    # - name: Ensure Java Installed
+    #   sudo: yes
+    #   apt:
+    #     name: openjdk-7-jre
+    #     state: absent
+- hosts: webserver
+  remote_user: root
+  become_method: sudo
+  roles:
+    - java
+    # - { role: java, java_openjdk_version: 8, java_headless: true, java_jre_only: true,java_implementation: ‘openjdk’,java_openjdk_use_ppa: true }
